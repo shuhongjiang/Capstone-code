@@ -1,0 +1,4369 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.4",
+  "name": "Chatbot",
+  "desc": "all cas itemsin one intent",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Abbreviation"
+    },
+    {
+      "name": "Administrators"
+    },
+    {
+      "name": "Audit_conclusion_output"
+    },
+    {
+      "name": "Audit_execution_output"
+    },
+    {
+      "name": "Audit_interim_output"
+    },
+    {
+      "name": "Audit_planning_output"
+    },
+    {
+      "name": "CAS_cashandbrokers"
+    },
+    {
+      "name": "CAS_dividends_interest"
+    },
+    {
+      "name": "CAS_expense"
+    },
+    {
+      "name": "CAS_FSCP"
+    },
+    {
+      "name": "CAS_income"
+    },
+    {
+      "name": "CAS_investments"
+    },
+    {
+      "name": "CAS_NAV_Based_fees"
+    },
+    {
+      "name": "CAS_Payables"
+    },
+    {
+      "name": "CAS_realised_gains_losses"
+    },
+    {
+      "name": "CAS_receivables"
+    },
+    {
+      "name": "CAS_share_capital"
+    },
+    {
+      "name": "CAS_unrealised_gains_losses"
+    },
+    {
+      "name": "client"
+    },
+    {
+      "name": "current_functionality"
+    },
+    {
+      "name": "EYHelix"
+    },
+    {
+      "name": "For_me"
+    },
+    {
+      "name": "fundstype"
+    },
+    {
+      "name": "FurtherQuestions"
+    },
+    {
+      "name": "Intro"
+    },
+    {
+      "name": "Mechanism"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Process_cashandbroker"
+    },
+    {
+      "name": "Process_conclusion"
+    },
+    {
+      "name": "Process_dividend_interest"
+    },
+    {
+      "name": "Process_execution"
+    },
+    {
+      "name": "process_expense"
+    },
+    {
+      "name": "Process_FSCP"
+    },
+    {
+      "name": "Process_income"
+    },
+    {
+      "name": "Process_interim"
+    },
+    {
+      "name": "Process_investments"
+    },
+    {
+      "name": "Process_NAV_based_fees"
+    },
+    {
+      "name": "Process_Payables"
+    },
+    {
+      "name": "process_planning"
+    },
+    {
+      "name": "Process_planning_out_of_scope"
+    },
+    {
+      "name": "Process_realized_gains_and_losses"
+    },
+    {
+      "name": "Process_receivables"
+    },
+    {
+      "name": "Process_share_capital"
+    },
+    {
+      "name": "Process_unrealized_gains_and_losses"
+    },
+    {
+      "name": "training"
+    },
+    {
+      "name": "WAMapp_for_EY"
+    },
+    {
+      "name": "Whatnext"
+    }
+  ],
+  "entities": [
+    {
+      "name": "CAS",
+      "roles": []
+    },
+    {
+      "name": "Income",
+      "roles": []
+    },
+    {
+      "name": "PSP",
+      "roles": []
+    },
+    {
+      "name": "share_capital",
+      "roles": []
+    },
+    {
+      "name": "Relaized/unrealized",
+      "children": [
+        "Realized",
+        "Unrealized"
+      ],
+      "roles": []
+    }
+  ],
+  "composites": [
+    {
+      "name": "CAS items",
+      "children": [
+        "CAS",
+        "cash_and_broker_accounts",
+        "Dividend_and_interest",
+        "FSCP",
+        "Investments",
+        "Income",
+        "NAV_based_fees",
+        "expense",
+        "Payables",
+        "receivable"
+      ],
+      "roles": []
+    },
+    {
+      "name": "CAS_items_2",
+      "children": [
+        "CAS",
+        "share_capital",
+        "Relaized/unrealized::Unrealized",
+        "Relaized/unrealized::Realized",
+        "gains and losses"
+      ],
+      "roles": []
+    },
+    {
+      "name": "Process_items",
+      "children": [
+        "cash_and_broker_accounts",
+        "Dividend_and_interest",
+        "expense",
+        "FSCP",
+        "Income",
+        "Investments",
+        "NAV_based_fees",
+        "Payables",
+        "Process"
+      ],
+      "roles": []
+    },
+    {
+      "name": "Process_items_2",
+      "children": [
+        "gains and losses",
+        "Process",
+        "share_capital",
+        "receivable",
+        "Relaized/unrealized",
+        "Relaized/unrealized::Unrealized",
+        "Relaized/unrealized::Realized"
+      ],
+      "roles": []
+    },
+    {
+      "name": "realized_unrealized_G_L",
+      "children": [
+        "CAS",
+        "gains and losses",
+        "Relaized/unrealized::Realized",
+        "Relaized/unrealized::Unrealized"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "abbreviation",
+      "subLists": [
+        {
+          "canonicalForm": "abbreviation ",
+          "list": [
+            "short for",
+            "stand for"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "administrators",
+      "subLists": [
+        {
+          "canonicalForm": "administrators",
+          "list": [
+            "admin"
+          ]
+        },
+        {
+          "canonicalForm": "administrator",
+          "list": [
+            "admins"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "cash_and_broker_accounts",
+      "subLists": [
+        {
+          "canonicalForm": "CASH BROKER",
+          "list": [
+            "cash and broker",
+            "cash/broker",
+            "cash broker ac",
+            "cash and broker accs",
+            "cash broker a/c",
+            "broker",
+            "cash",
+            "cash",
+            "cash",
+            "cash and broker"
+          ]
+        },
+        {
+          "canonicalForm": "accounts",
+          "list": []
+        },
+        {
+          "canonicalForm": "account",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "conclusion",
+      "subLists": [
+        {
+          "canonicalForm": "conclusion",
+          "list": [
+            "conc",
+            "conlusions",
+            "conclusions",
+            "conclude"
+          ]
+        },
+        {
+          "canonicalForm": "final",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Dividend_and_interest",
+      "subLists": [
+        {
+          "canonicalForm": "dividend and interest",
+          "list": [
+            "div & interest",
+            "dividends",
+            "interest",
+            "dividend/interest income/expense",
+            "dividen interest income and expense",
+            "coupon dividend rates",
+            "coupon"
+          ]
+        },
+        {
+          "canonicalForm": "dividends",
+          "list": [
+            "div",
+            "dividends",
+            "divs"
+          ]
+        },
+        {
+          "canonicalForm": "interest",
+          "list": [
+            "interests",
+            "int"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "execution",
+      "subLists": [
+        {
+          "canonicalForm": "execution ",
+          "list": [
+            "executions"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "expense",
+      "subLists": [
+        {
+          "canonicalForm": "expense ",
+          "list": [
+            "exp",
+            "expenes",
+            "exp.",
+            "expenses"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "EY Helix",
+      "subLists": [
+        {
+          "canonicalForm": "EY",
+          "list": [
+            "E.Y#",
+            "Ernest&Young",
+            "Ernest young"
+          ]
+        },
+        {
+          "canonicalForm": "Helix",
+          "list": [
+            "eyhelix"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "FSCP",
+      "subLists": [
+        {
+          "canonicalForm": "FSCP",
+          "list": [
+            "Financifinancial Services Certified Professional"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "functionality",
+      "subLists": [
+        {
+          "canonicalForm": "functionality",
+          "list": [
+            "function",
+            "functions",
+            "functional"
+          ]
+        },
+        {
+          "canonicalForm": "feature",
+          "list": [
+            "features"
+          ]
+        },
+        {
+          "canonicalForm": "functionalities",
+          "list": []
+        },
+        {
+          "canonicalForm": "component",
+          "list": []
+        },
+        {
+          "canonicalForm": "capabilities",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Funds",
+      "subLists": [
+        {
+          "canonicalForm": "fund",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "gains and losses",
+      "subLists": [
+        {
+          "canonicalForm": "gains /losses",
+          "list": [
+            "G/L",
+            "losses and gains",
+            "gain n loss",
+            "gains and losses",
+            "gain and loss",
+            "gain & loss",
+            "gain and losses",
+            "gains and loss"
+          ]
+        },
+        {
+          "canonicalForm": "gains",
+          "list": [
+            "gain",
+            "g"
+          ]
+        },
+        {
+          "canonicalForm": "losses",
+          "list": [
+            "loss",
+            "L",
+            "l"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "impact",
+      "subLists": [
+        {
+          "canonicalForm": "impact",
+          "list": [
+            "effect",
+            "benefit",
+            "influence"
+          ]
+        },
+        {
+          "canonicalForm": "influence",
+          "list": []
+        },
+        {
+          "canonicalForm": "impacting",
+          "list": []
+        },
+        {
+          "canonicalForm": "affect",
+          "list": []
+        },
+        {
+          "canonicalForm": "impacts",
+          "list": []
+        },
+        {
+          "canonicalForm": "effectiveness",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "interim",
+      "subLists": [
+        {
+          "canonicalForm": "interim ",
+          "list": [
+            "interims"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Investments",
+      "subLists": [
+        {
+          "canonicalForm": "inv",
+          "list": [
+            "invests",
+            "investments"
+          ]
+        },
+        {
+          "canonicalForm": "investment",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "NAV_based_fees",
+      "subLists": [
+        {
+          "canonicalForm": "NAV based fees",
+          "list": [
+            "NAV fees",
+            "NAV"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Payables",
+      "subLists": [
+        {
+          "canonicalForm": "payables ",
+          "list": [
+            "payable",
+            "payables"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "planning",
+      "subLists": [
+        {
+          "canonicalForm": "planning ",
+          "list": [
+            "plan",
+            "risk",
+            "preparation"
+          ]
+        },
+        {
+          "canonicalForm": "stage",
+          "list": [
+            "phase"
+          ]
+        },
+        {
+          "canonicalForm": "risk assessment",
+          "list": [
+            "risk",
+            "assessment"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Process",
+      "subLists": [
+        {
+          "canonicalForm": "Process",
+          "list": [
+            "steps",
+            "stage",
+            "tasks",
+            "procedure",
+            "processing",
+            "processes",
+            "implementation",
+            "task"
+          ]
+        },
+        {
+          "canonicalForm": "automate",
+          "list": []
+        },
+        {
+          "canonicalForm": "things",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "receivable",
+      "subLists": [
+        {
+          "canonicalForm": "receivables",
+          "list": [
+            "receivable"
+          ]
+        },
+        {
+          "canonicalForm": "receivable",
+          "list": []
+        },
+        {
+          "canonicalForm": "receives",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Team",
+      "subLists": [
+        {
+          "canonicalForm": "team",
+          "list": [
+            "teams"
+          ]
+        },
+        {
+          "canonicalForm": "group ",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "unrealized",
+      "subLists": [
+        {
+          "canonicalForm": "unrealized",
+          "list": [
+            "Unrealised"
+          ]
+        },
+        {
+          "canonicalForm": "unrelaized",
+          "list": []
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "WAMapp",
+      "subLists": [
+        {
+          "canonicalForm": "WAM",
+          "list": [
+            "WAMapps",
+            "this app",
+            "wamapp platform",
+            "WAMapp",
+            "wealth and asset management app"
+          ]
+        },
+        {
+          "canonicalForm": "app",
+          "list": [
+            "application",
+            "apps"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [
+    {
+      "pattern": "{CAS} for {CAS items}?",
+      "intent": "CAS_cashandbrokers"
+    },
+    {
+      "pattern": "what is are the {CAS} for {CAS items}?",
+      "intent": "Process_receivables"
+    },
+    {
+      "pattern": "what are the {CAS items}?",
+      "intent": "CAS_cashandbrokers"
+    }
+  ],
+  "utterances": [
+    {
+      "text": "add another sublist called supplies .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are there admins who are using this app?",
+      "intent": "Administrators",
+      "entities": []
+    },
+    {
+      "text": "are there any changes tp the fscp steps with wamapps?",
+      "intent": "Process_FSCP",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 34,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "are there cas for dividends and interests",
+      "intent": "CAS_dividends_interest",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 10,
+          "endPos": 12
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 10,
+          "endPos": 12
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 18,
+          "endPos": 26
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 32,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "are there training for wamapp?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "are there tutorials for wamapp",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "are there wamapp training?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "bayonne yellow cab please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book 5 tickets for the city transit .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book me a seat on a bus leaving nyc to boston .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book me on an amtrak from here to dc",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call brady medical center",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call dad mike",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i get training for wamapp?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "can it deal with funds",
+      "intent": "fundstype",
+      "entities": []
+    },
+    {
+      "text": "can it support funds",
+      "intent": "fundstype",
+      "entities": []
+    },
+    {
+      "text": "can you explain the process of realized gains and loss",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 31,
+          "endPos": 38
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 40,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "can you get the cas for expenses?",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 16,
+          "endPos": 18
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 16,
+          "endPos": 18
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "can you give the cas items for receivable",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 17,
+          "endPos": 19
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "can you introduce platform",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "can you introduce wamapp",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "can you print the screen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you send invite to keil to play fifa 17",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me the cas items for payables?",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 34,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "can you tell me the cas items for receivables?",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 34,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "cancel a note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel cancel i ' m hungry",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel i ' m hungry",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my last note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "capture screen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cas broker and cash",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 4,
+          "endPos": 9
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 15,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "cas cash and broker",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "cas for exp?",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 8,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "cas for expenses?",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "cas for interest and divs",
+      "intent": "CAS_dividends_interest",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 8,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "cas for investments psp",
+      "intent": "CAS_investments",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 8,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "cas income?",
+      "intent": "CAS_income",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "cas items for realised gains and losses",
+      "intent": "CAS_realised_gains_losses",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Relaized/unrealized",
+          "startPos": 14,
+          "endPos": 21
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "cas of receivables",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "cas payable",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 4,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "cas payables",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "cas receivables",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 4,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "cas receivables?",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 4,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "change this entry to fifty two",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "copy note to joe",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cortana",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "current function",
+      "intent": "current_functionality",
+      "entities": []
+    },
+    {
+      "text": "delete any adult movie",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "divivdend and interest psp with wamapps?",
+      "intent": "Process_dividend_interest",
+      "entities": []
+    },
+    {
+      "text": "do you know the cas for dividends and interests",
+      "intent": "CAS_dividends_interest",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 16,
+          "endPos": 18
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 16,
+          "endPos": 18
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 24,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "do you know what the cas items are for receivables?",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 23
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 39,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "does wam process fscp?",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "does wamapp automate income tasks for me?",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Income",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 28,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "does wamapps belong to eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "does wamapps help automate stages for dividends and interest psp?",
+      "intent": "Process_dividend_interest",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 18,
+          "endPos": 25
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 38,
+          "endPos": 46
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 52,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "does wamapps help me plan an audit?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "does wamapps help with fscp psp process?",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "don ' t take any other notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "eastside family friendly restaurants",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "email cloney john",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "exp cas",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 4,
+          "endPos": 6
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "expense for cas?",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "expense help",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "expense task",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "fatima luas stop dublin please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find gator ' s happy hour menu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find local barbecue delivery",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find me delivery that is open now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find sushi takeout near sharon ' s house",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "food places that deliver near me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "for the planning stage of the audit, what does wamapps provide?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "free wi fi nevada",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "fscp cas items",
+      "intent": "CAS_FSCP",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 3
+        },
+        {
+          "entity": "CAS",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "fscp cas?",
+      "intent": "CAS_FSCP",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "further contacts?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "gains and losses cas",
+      "intent": "CAS_realised_gains_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS",
+          "startPos": 17,
+          "endPos": 19
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "get a translink for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "give me an example of cas for payables",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 30,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "give me the answer of cas item of payable",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 22,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "give me the contacts for the wamapp team",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "give me the email for the wamapp team",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "give me the example for the process of realized gains and losses",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 39,
+          "endPos": 46
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 48,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "give me the example of process of realized gains and loss",
+      "intent": "CAS_realised_gains_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 43,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "how about expenses. where does this app come in?",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "how can wamapps help auditors?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how can wamapps help in audit planning?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "how can wamapps help me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how do clients use wamapps",
+      "intent": "client",
+      "entities": []
+    },
+    {
+      "text": "how do i capture what ' s on my screen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how do i change the phone number for jack ?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how does it work",
+      "intent": "Mechanism",
+      "entities": []
+    },
+    {
+      "text": "how does the app help to plan the audit?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "how does the platform work",
+      "intent": "Mechanism",
+      "entities": []
+    },
+    {
+      "text": "how does this app work",
+      "intent": "Mechanism",
+      "entities": []
+    },
+    {
+      "text": "how does wam_app change receivables process?",
+      "intent": "Process_receivables",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 24,
+          "endPos": 34
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 36,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "how does wamapp automate dividend/ interest process?",
+      "intent": "Process_dividend_interest",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 35,
+          "endPos": 42
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 44,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "how does wamapp change income psp process for me?",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Income",
+          "startPos": 23,
+          "endPos": 28
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "how does wamapp change the steps for nav based fees psp",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 37,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "how does wamapp deal with unrealised gains and losses process",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 37,
+          "endPos": 52
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 54,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "how does wamapps affect me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps affect my role in ey?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps affect my work?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps automate fscp process?",
+      "intent": "Process_FSCP",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 17,
+          "endPos": 24
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 31,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "how does wamapps change payables psp",
+      "intent": "Process_Payables",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how does wamapps come into play in ey?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps help automate the tasks for expense",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps help automate the tasks for nav based fees",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 35,
+          "endPos": 39
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 45,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "how does wamapps help me during execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps help me during interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps help plan the audit?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps help with receviables psp?",
+      "intent": "Process_receivables",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 27,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "how does wamapps impact me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps impact my role?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how does wamapps work",
+      "intent": "Mechanism",
+      "entities": []
+    },
+    {
+      "text": "how far from manchester airport",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how has the share cap process changed with wamapps?",
+      "intent": "Process_share_capital",
+      "entities": []
+    },
+    {
+      "text": "how is payables psp different with wamapps",
+      "intent": "Process_Payables",
+      "entities": []
+    },
+    {
+      "text": "how it works",
+      "intent": "Mechanism",
+      "entities": []
+    },
+    {
+      "text": "how wamapp can help the audit results report",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "how will investments psp audit tasks change with wamapps?",
+      "intent": "Process_investments",
+      "entities": []
+    },
+    {
+      "text": "how will wamapps affect my role?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how will wamapps beneift me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "how will wamapps evolve for the future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "how will wamapps help me with investment psp?",
+      "intent": "Process_investments",
+      "entities": []
+    },
+    {
+      "text": "how would wamapps impact ey?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "how's income psp different with wamapp?",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Income",
+          "startPos": 6,
+          "endPos": 11
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 6,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "how's the share cap stage different for wamapp?",
+      "intent": "Process_share_capital",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 10,
+          "endPos": 14
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 16,
+          "endPos": 18
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "i am at liquor store - beer",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i have more questions, who do i contact?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "i still have questions. who should i contact?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "i want to catch bus number 4 route",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to catch bus route 221",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to catch bus route twelve tamu",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to erase all adult videos",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to get a gatorade coupon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to get pepcid coupons",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to take bus 240",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i will not visit the musee du louvre",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "income cas items?",
+      "intent": "CAS_income",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 7,
+          "endPos": 9
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "income psp process",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Income",
+          "startPos": 0,
+          "endPos": 5
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 5
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 11,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "investment tasks?",
+      "intent": "Process_investments",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "investments psp for cas",
+      "intent": "CAS_investments",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 0,
+          "endPos": 10
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 20,
+          "endPos": 22
+        },
+        {
+          "entity": "CAS",
+          "startPos": 20,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "investments psp with wamapps?",
+      "intent": "Process_investments",
+      "entities": []
+    },
+    {
+      "text": "invite mark paul to party chat",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is there training for wamapp?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "is training available?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "is wamapp short for anything?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "is wamapps a part of eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "is wamapps created as a part of eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "is wamapps finished?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "is wamapps fully developed?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "is wamapps in eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "is wamapps included in eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "is wamapps with eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "let me remove all sex videos",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "list me my tasks for interim with wamapps?",
+      "intent": "Process_execution",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "list me the nav based fees cas",
+      "intent": "CAS_NAV_Based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS",
+          "startPos": 27,
+          "endPos": 29
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 27,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "list me the unrealised gains and losses cas",
+      "intent": "CAS_unrealised_gains_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 12,
+          "endPos": 21
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 38
+        },
+        {
+          "entity": "CAS",
+          "startPos": 40,
+          "endPos": 42
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 40,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "list the cas items for expense",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "list the cas items for payables for me",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 9,
+          "endPos": 11
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 23,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "make edge ' s start page homepage",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "mark all email messages as read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move the bbq party to friday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "name me the admins for this app?",
+      "intent": "Administrators",
+      "entities": []
+    },
+    {
+      "text": "nav based fee process with wamapps involve",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "nav based fee task",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 14,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "nav fee",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nav fee help",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "nav fee task",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 0,
+          "endPos": 2
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 8,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "open my apps",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "out of scope tasks for audit planning with wamapps",
+      "intent": "Process_planning_out_of_scope",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "outputs for execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "outputs for interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "partner also use wamapp",
+      "intent": "Administrators",
+      "entities": []
+    },
+    {
+      "text": "please add music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please allow edit notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please reserve for me a single sea view room at hilton paris",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please snooze suntan reminder",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please unsnap ustream",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "preparation for using wamapp auditing",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "process of planning an audit with wamapps",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "process of realized of gains losses",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": []
+    },
+    {
+      "text": "realised gains and losses process?",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 9,
+          "endPos": 24
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 26,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "receivables",
+      "intent": "Process_receivables",
+      "entities": []
+    },
+    {
+      "text": "remove for me any sex movie",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reserve on pace bus transportation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "save screenshot to onenote",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "screenshot that he quits auto",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "screenshot this page for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "send the last two notes to fisher via bluetooth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "septa bus please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "september birthstone ring size 7",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "share capital cas items?",
+      "intent": "CAS_share_capital",
+      "entities": [
+        {
+          "entity": "share_capital",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "CAS_items_2",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "share_capital",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "CAS_items_2",
+          "startPos": 6,
+          "endPos": 12
+        },
+        {
+          "entity": "CAS",
+          "startPos": 14,
+          "endPos": 16
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 14,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "share capital psp process for wamapps",
+      "intent": "Process_share_capital",
+      "entities": []
+    },
+    {
+      "text": "snap game dvr .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "snap play my music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "snooze appointment",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "so what is reuquired of my team for interim?",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "start a party with fred",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with james",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with lee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with martha",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with max",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with patrick",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with paul",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with rony",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start a party with sarah .",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "start speaker . cancel",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "steps for income psp?",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "Income",
+          "startPos": 10,
+          "endPos": 15
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 10,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "steps in audit plan?",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "stop reading the note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take a screenshot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take a screenshot immediately",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take a screenshot to onenote",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take me to tennessee",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tasks for receivables with wamapps?",
+      "intent": "Process_receivables",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 10,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "tell about fscp psp with wamapps",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "tell me about conclusion of audit with wamapps?",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "tell me about dividend and interest psp with wamapps",
+      "intent": "Process_dividend_interest",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 14,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "tell me about my requirements for execution with wamapps",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "tell me about the payables psp process",
+      "intent": "Process_Payables",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 18,
+          "endPos": 25
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 31,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "tell me about the planning stage of an audit in wamapps?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "tell me about unrelaized gains and losses with wamapps for psp",
+      "intent": "Process_unrealized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 25,
+          "endPos": 40
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 47,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "tell me all the functions of wamapps",
+      "intent": "current_functionality",
+      "entities": []
+    },
+    {
+      "text": "tell me all the items for fscp cas",
+      "intent": "CAS_FSCP",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 26,
+          "endPos": 29
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 31,
+          "endPos": 33
+        },
+        {
+          "entity": "CAS",
+          "startPos": 31,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "tell me how to execute audit with wamapp",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "tell me my teams requirements for execution with wamapps?",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "tell me the cas for cash and brokers ac",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "tell me the cas for cash broker",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "tell me the cas for share capital",
+      "intent": "CAS_share_capital",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "share_capital",
+          "startPos": 20,
+          "endPos": 24
+        },
+        {
+          "entity": "share_capital",
+          "startPos": 26,
+          "endPos": 32
+        },
+        {
+          "entity": "CAS_items_2",
+          "startPos": 26,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "tell me the cas items for interest and dividends",
+      "intent": "CAS_dividends_interest",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 26,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "tell me the cas items for investments",
+      "intent": "CAS_investments",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 26,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "tell me the fscp cas items please",
+      "intent": "CAS_FSCP",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS",
+          "startPos": 17,
+          "endPos": 19
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 17,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "tell me the items for cas receivables",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 26,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "tell me the nav based fees cas",
+      "intent": "CAS_NAV_Based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 12,
+          "endPos": 25
+        },
+        {
+          "entity": "CAS",
+          "startPos": 27,
+          "endPos": 29
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 27,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "tell me the process for investment psp",
+      "intent": "Process_investments",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "tell me the tasks for share cap psp with wamapps",
+      "intent": "Process_share_capital",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "tell me the wamapp stages for cash and broker tasks?",
+      "intent": "Process_cashandbroker",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 30,
+          "endPos": 44
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 46,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "tell me unrealised gains and losses cas items",
+      "intent": "CAS_unrealised_gains_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 8,
+          "endPos": 17
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 19,
+          "endPos": 34
+        },
+        {
+          "entity": "CAS",
+          "startPos": 36,
+          "endPos": 38
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 36,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "tell me what the unrealized gains and losses cas items are",
+      "intent": "CAS_unrealised_gains_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 17,
+          "endPos": 26
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 28,
+          "endPos": 43
+        },
+        {
+          "entity": "CAS",
+          "startPos": 45,
+          "endPos": 47
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 45,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "tell me what you can't do for planning?",
+      "intent": "Process_planning_out_of_scope",
+      "entities": []
+    },
+    {
+      "text": "temp delete frisbee notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the best drugstore matte foundation for oily skin please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the meaning of wam",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "the workshop will last for 10 hours",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "things need to do for audit planning",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "training available?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "turn off the music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "unrealized gains and losses process",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 11,
+          "endPos": 26
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 28,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "use screengrab to capture a screenshot please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wamapp automate tasks for expense",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "wamapp expense task",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "wamapp function",
+      "intent": "current_functionality",
+      "entities": []
+    },
+    {
+      "text": "wamapp nav fees",
+      "intent": "Process_NAV_based_fees",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 7,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "wamapp training available?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "wamapp training?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "wamapp with realised gains and losses",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 21,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "wamapp with realized gains and losses",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 21,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "wamapps a part of eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "wamapp's final output",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "wamapps for client use?",
+      "intent": "client",
+      "entities": []
+    },
+    {
+      "text": "wamapps future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "wamapps in eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "wamapps in the future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "wamapps interim outputs?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "wamapps outputs for execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "wamapps part of eyhelix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "wamapps part of helix?",
+      "intent": "EYHelix",
+      "entities": []
+    },
+    {
+      "text": "what about an audit planning in wamapps?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "what about fscps for wamapps?",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "what about restaurant number two",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what about the automation for audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what about the outputs for the interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what about training for wamapp?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "what administrators have agreed to use it",
+      "intent": "Administrators",
+      "entities": []
+    },
+    {
+      "text": "what are my tasks for interim iwth wamapps?",
+      "intent": "Process_interim",
+      "entities": []
+    },
+    {
+      "text": "what are the cas for cash and brokers ac",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 30,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for cash broker",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for dividens and interests",
+      "intent": "CAS_dividends_interest",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 34,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for fscp",
+      "intent": "CAS_FSCP",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for investments",
+      "intent": "CAS_cashandbrokers",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for nav based fees?",
+      "intent": "CAS_NAV_Based_fees",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 21,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for realized gains and losses",
+      "intent": "CAS_realised_gains_losses",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "Relaized/unrealized::Realized",
+          "startPos": 21,
+          "endPos": 28
+        },
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 21,
+          "endPos": 28
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 30,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "what are the cas for receivables?",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 21,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "what are the cas item for payables?",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "what are the cas items for investments psp",
+      "intent": "CAS_investments",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 27,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "what are the cas items for receivables?",
+      "intent": "CAS_receivables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 27,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "what are the cas items for share capital",
+      "intent": "CAS_share_capital",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 15
+        },
+        {
+          "entity": "share_capital",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "CAS_items_2",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "share_capital",
+          "startPos": 33,
+          "endPos": 39
+        },
+        {
+          "entity": "CAS_items_2",
+          "startPos": 33,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "what are the different steps for psp receivables for wamapps now?",
+      "intent": "Process_receivables",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 23,
+          "endPos": 27
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 37,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "what are the expenses cas?",
+      "intent": "CAS_expense",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 20
+        },
+        {
+          "entity": "CAS",
+          "startPos": 22,
+          "endPos": 24
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 22,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "what are the items for cas income?",
+      "intent": "CAS_income",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 23,
+          "endPos": 25
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 23,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what are the items for cas unrealised gains and losses",
+      "intent": "CAS_unrealised_gains_losses",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 23,
+          "endPos": 25
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 23,
+          "endPos": 25
+        },
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 27,
+          "endPos": 36
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 38,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "what are the nav based fees items for cas?",
+      "intent": "CAS_NAV_Based_fees",
+      "entities": [
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 26
+        },
+        {
+          "entity": "CAS",
+          "startPos": 38,
+          "endPos": 40
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 38,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "what are the outputs for the audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what are the requirements for conclusion?",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what are the requirements then for conclusion?",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what are the steps for cash and broker psp?",
+      "intent": "Process_cashandbroker",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 13,
+          "endPos": 17
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "what are the steps for income psp with wamapps?",
+      "intent": "Process_income",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 13,
+          "endPos": 17
+        },
+        {
+          "entity": "Income",
+          "startPos": 23,
+          "endPos": 28
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "what are the tasks for cash and broker accounts?",
+      "intent": "Process_cashandbroker",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 13,
+          "endPos": 17
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 23,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "what are the tasks for payables psp?",
+      "intent": "Process_Payables",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 13,
+          "endPos": 17
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 23,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "what are the wamapps outputs for interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what are wamapps functionalities",
+      "intent": "current_functionality",
+      "entities": []
+    },
+    {
+      "text": "what can wamapps do for me for interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what can't i do with wamapps for planning?",
+      "intent": "Process_planning_out_of_scope",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 21,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "what can't wamapp do for audit planning",
+      "intent": "Process_planning_out_of_scope",
+      "entities": []
+    },
+    {
+      "text": "what cas for income?",
+      "intent": "CAS_income",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 5,
+          "endPos": 7
+        },
+        {
+          "entity": "Income",
+          "startPos": 13,
+          "endPos": 18
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 13,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "what conclusions wamapps give",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "what do i do for unrealized gains and losses?",
+      "intent": "Process_unrealized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 17,
+          "endPos": 26
+        },
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 17,
+          "endPos": 26
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 28,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "what do i do with receivables with wamapps?",
+      "intent": "Process_receivables",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 18,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "what do i do with unrealized gains and losses on wamapps?",
+      "intent": "Process_unrealized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Process_items_2",
+          "startPos": 18,
+          "endPos": 27
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 29,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "what do i have to do for share cap wamapp with wamapp",
+      "intent": "Process_share_capital",
+      "entities": []
+    },
+    {
+      "text": "what do i have to do with fscp with wamapps",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "what do i need to conclude the audit with wamapps?",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what do i need to do to conclude audit with wamapp?",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what do i need to prepare to use wamapp",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "what does my team need for conclusion",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what does my team need to do during interim stage of audit when using wamapps?",
+      "intent": "Process_interim",
+      "entities": []
+    },
+    {
+      "text": "what does my team need to do during interim with wamapps?",
+      "intent": "Process_interim",
+      "entities": []
+    },
+    {
+      "text": "what does my team need to do during planning stage of audit when using wamapps",
+      "intent": "process_planning",
+      "entities": []
+    },
+    {
+      "text": "what does my team need to do during the execution stage of an audit while using wamapps?",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "what does the abbreviation of wamapp mean?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what does wamapp mean for ey?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "what does wamapp mean?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps automate for the audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps automate for the audit planning?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do during audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do during the planning of an audit?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do for me during execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do for me during the interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do for me for the interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do for me for the planning of an audit?",
+      "intent": "Audit_planning_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps do for realised gains and losses",
+      "intent": "Process_realized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "realized_unrealized_G_L",
+          "startPos": 25,
+          "endPos": 32
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 34,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "what does wamapps do for the interim stage of the audit?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps mean for ey's auditing process?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps mean for me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps produce for audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what does wamapps stand for?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what function wamapp can provide",
+      "intent": "current_functionality",
+      "entities": []
+    },
+    {
+      "text": "what impact does wamapps have on my work?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "what impacts does wamapps have on me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "what is out of scope with wamapps for audit planning?",
+      "intent": "Process_planning_out_of_scope",
+      "entities": []
+    },
+    {
+      "text": "what is still required of my team for execution of audit with wamapps?",
+      "intent": "Process_execution",
+      "entities": []
+    },
+    {
+      "text": "what is still required of my team with wamapps for interim?",
+      "intent": "Process_interim",
+      "entities": []
+    },
+    {
+      "text": "what is still required of the audit team for the conclusion of an audit when using wamapps?(",
+      "intent": "Process_conclusion",
+      "entities": []
+    },
+    {
+      "text": "what is the cas for income?",
+      "intent": "CAS_income",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 12,
+          "endPos": 14
+        },
+        {
+          "entity": "Income",
+          "startPos": 20,
+          "endPos": 25
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 20,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what is the full name of the application?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what is the full name of wam",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what is the full name of wamapp?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what is the future for wamapps?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "what is this app",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "what is this platform",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "what is wam",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "what is wamapp",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "what is wamapp short for?",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what is wamapp?",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "what items are cas payables?",
+      "intent": "CAS_Payables",
+      "entities": [
+        {
+          "entity": "CAS",
+          "startPos": 15,
+          "endPos": 17
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 15,
+          "endPos": 17
+        },
+        {
+          "entity": "CAS items",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "what outputs and conclusions does wamapps provide",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "what outputs does wamapp provide",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "what outputs does wamapps produce during the execution stage of the audit?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what outputs does wamapps produce during the interim stage of the audit?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what should my team do then for interim planning?",
+      "intent": "Process_interim",
+      "entities": []
+    },
+    {
+      "text": "what tasks do i have for payables psp with wamapps",
+      "intent": "Process_Payables",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 5,
+          "endPos": 9
+        },
+        {
+          "entity": "Process_items",
+          "startPos": 25,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "what tasks do wamapps automate during execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what tasks do wamapps automate for interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what tasks do wamapps do for audit execution?",
+      "intent": "Audit_execution_output",
+      "entities": []
+    },
+    {
+      "text": "what training for wamapp?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "what types of funds does it support",
+      "intent": "fundstype",
+      "entities": []
+    },
+    {
+      "text": "what types of funds it can deal with",
+      "intent": "fundstype",
+      "entities": []
+    },
+    {
+      "text": "what wam stand for",
+      "intent": "Abbreviation",
+      "entities": []
+    },
+    {
+      "text": "what wamapp training?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "what will tasks of investments psp be on wamapps?",
+      "intent": "Process_investments",
+      "entities": []
+    },
+    {
+      "text": "what will the investment psp look like with wamapp?",
+      "intent": "Process_investments",
+      "entities": []
+    },
+    {
+      "text": "what will wamapps be like in the future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "what will wamapps become in the future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "what would wamapps do for ey?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "what’s next for wamapps?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "whatis the future of wamapps?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "what's different for the fscp psp with wamapps?",
+      "intent": "Process_FSCP",
+      "entities": []
+    },
+    {
+      "text": "what's different for unrelaised gains and losses process with wamapps",
+      "intent": "Process_unrealized_gains_and_losses",
+      "entities": [
+        {
+          "entity": "Relaized/unrealized::Unrealized",
+          "startPos": 21,
+          "endPos": 30
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 21,
+          "endPos": 30
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 32,
+          "endPos": 47
+        },
+        {
+          "entity": "Process_items_2",
+          "startPos": 49,
+          "endPos": 55
+        }
+      ]
+    },
+    {
+      "text": "what's does wamapps automate for the interim?",
+      "intent": "Audit_interim_output",
+      "entities": []
+    },
+    {
+      "text": "what's now different for the cash and broker ac stage?",
+      "intent": "Process_cashandbroker",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 48,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "what's the change for payables psp now on wamapps",
+      "intent": "Process_Payables",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "what's the impact of wamapps on me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "what's the impact of wamapps on my work?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "what's the investment psp?",
+      "intent": "Process_investments",
+      "entities": [
+        {
+          "entity": "Process_items",
+          "startPos": 11,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "what's the task automation for unrealised gains and losses",
+      "intent": "Process_unrealized_gains_and_losses",
+      "entities": []
+    },
+    {
+      "text": "whats the wamapp final output",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "whats the wamapp output for concluding audit?",
+      "intent": "Audit_conclusion_output",
+      "entities": []
+    },
+    {
+      "text": "what's wamapps?",
+      "intent": "Intro",
+      "entities": []
+    },
+    {
+      "text": "where would this app fit in the expenses stage?",
+      "intent": "process_expense",
+      "entities": []
+    },
+    {
+      "text": "who are the admins of this app?",
+      "intent": "Administrators",
+      "entities": []
+    },
+    {
+      "text": "who can i contact for further questions?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "who can i contact for more wamapp related questions?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "who can i contact for wamapps related questions?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "who do i contact for further questions?",
+      "intent": "FurtherQuestions",
+      "entities": []
+    },
+    {
+      "text": "why wamapps for auditing process?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "why was wamapps introduced for ey?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "why was wamapps introduced in to ey's auditing process?",
+      "intent": "WAMapp_for_EY",
+      "entities": []
+    },
+    {
+      "text": "will there be any more changes in the future for wamapps?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "will there be other developments for wamapps?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "will there be wamapps training available?",
+      "intent": "training",
+      "entities": []
+    },
+    {
+      "text": "will wamapps benefit me?",
+      "intent": "For_me",
+      "entities": []
+    },
+    {
+      "text": "will wamapps change in the future?",
+      "intent": "Whatnext",
+      "entities": []
+    },
+    {
+      "text": "work",
+      "intent": "None",
+      "entities": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "WAMtestbot",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "",
+            "id": "5f9fbf60-91ab-11e8-a0f5-99d175c504df",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "name": "http://localhost:3978/api/messages"
+        }
+    ]
+}
